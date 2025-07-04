@@ -1,0 +1,66 @@
+:root {
+  --bg-light: #f9f7ff;
+  --bg-dark: #2e1a47;
+  --navbar-bg-light: rgba(255, 255, 255, 0.9);
+  --navbar-bg-dark: rgba(0, 0, 0, 0.4);
+  --text-light: #1a1a1a;
+  --text-dark: #eaeaea;
+  --transition-speed: 0.4s;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.navbar {
+  backdrop-filter: blur(10px);
+  background-color: var(--navbar-bg-light);
+  transition: background-color var(--transition-speed);
+}
+
+body.dark-mode .navbar {
+  background-color: var(--navbar-bg-dark);
+}
+
+.nav-link {
+  transition: color var(--transition-speed);
+}
+
+body.dark-mode .nav-link {
+  color: var(--text-dark);
+}
+
+#themeToggle {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  color: inherit;
+  transition: color var(--transition-speed);
+}
+
+#themeToggle:hover {
+  cursor: pointer;
+}
+
+.custom-resume-btn {
+  background-color: #6b3fa0; /* dark lilac/purple */
+  color: #fff;
+  padding: 0.6rem 1.4rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+}
+
+.custom-resume-btn:hover {
+  background-color: #5a3290; /* slightly darker on hover */
+  box-shadow: 0 0 10px rgba(107, 63, 160, 0.5);
+  color: #fff;
+}
+
