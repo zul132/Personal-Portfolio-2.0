@@ -2,10 +2,14 @@
   --bg-light: #f9f7ff;
   --bg-dark: #2e1a47;
   --navbar-bg-light: rgba(255, 255, 255, 0.9);
-  --navbar-bg-dark: rgba(0, 0, 0, 0.4);
+  --navbar-bg-dark: rgba(24, 12, 41, 0.9); /* darker than #2e1a47 */
   --text-light: #1a1a1a;
   --text-dark: #eaeaea;
   --transition-speed: 0.4s;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -19,36 +23,50 @@ body.dark-mode {
   color: var(--text-dark);
 }
 
+/* ===== Navbar Styles ===== */
 .navbar {
   backdrop-filter: blur(10px);
   background-color: var(--navbar-bg-light);
-  transition: background-color var(--transition-speed);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
+/* Dark Mode Navbar BG */
 body.dark-mode .navbar {
   background-color: var(--navbar-bg-dark);
 }
 
-.nav-link {
+/* Logo (navbar-brand) */
+.navbar .navbar-brand {
+  font-weight: 700;
+  color: #000;
   transition: color var(--transition-speed);
 }
 
-body.dark-mode .nav-link {
-  color: var(--text-dark);
+body.dark-mode .navbar .navbar-brand {
+  color: #ffffff;
 }
 
-#themeToggle {
-  background: transparent;
-  border: none;
-  font-size: 1.25rem;
-  color: inherit;
+/* Navbar links */
+.navbar-nav .nav-link {
+  color: #444;
   transition: color var(--transition-speed);
 }
 
-#themeToggle:hover {
-  cursor: pointer;
+body.dark-mode .navbar-nav .nav-link {
+  color: #e0e0e0;
 }
 
+/* Theme toggle icon */
+#themeToggle i {
+  color: #444;
+  transition: color var(--transition-speed);
+}
+
+body.dark-mode #themeToggle i {
+  color: #e0e0e0;
+}
+
+/* ===== Resume Button ===== */
 .custom-resume-btn {
   background-color: #6b3fa0; /* dark lilac/purple */
   color: #fff;
@@ -63,4 +81,68 @@ body.dark-mode .nav-link {
   box-shadow: 0 0 10px rgba(107, 63, 160, 0.5);
   color: #fff;
 }
+
+/* Theme toggle button */
+#themeToggle {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  color: inherit;
+  transition: color var(--transition-speed);
+}
+
+#themeToggle:hover {
+  cursor: pointer;
+}
+
+/* 1. More spacing between navbar items */
+.navbar-nav .nav-link {
+  padding: 0.5rem 1rem; /* top-bottom, left-right */
+  font-size: 1rem;
+}
+
+/* 2. Adjust logo padding to move left */
+.navbar .navbar-brand {
+  margin-left: 0.75rem;
+  padding: 0.5rem 0; /* vertical padding, no horizontal padding */
+  font-size: 1.35rem;
+}
+
+/* Add spacing between navbar items */
+.navbar-nav .nav-item {
+  margin: 0 0.5rem; /* left and right spacing */
+}
+
+
+/* 3. Increase navbar height by adding padding */
+.navbar {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+/* Light mode: Navbar link hover */
+.navbar-nav .nav-link:hover {
+  color: #ce33e8
+}
+
+/* Dark mode: Navbar link hover */
+body.dark-mode .navbar-nav .nav-link:hover {
+  color: #ce33e8
+}
+
+/* Light mode: Theme toggle icon hover */
+#themeToggle i:hover {
+  color: #ce33e8
+}
+
+/* Dark mode: Theme toggle icon hover */
+body.dark-mode #themeToggle i:hover {
+  color: #ce33e8
+}
+
+.navbar-nav .nav-link,
+#themeToggle i {
+  transition: color 0.3s ease;
+}
+
 
