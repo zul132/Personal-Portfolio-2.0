@@ -1,5 +1,5 @@
 :root {
-  --bg-light: #f9f7ff;
+  --bg-light: #f9f7ff; /* #f0ecf9; */
   --bg-dark: #2e1a47;
   --navbar-bg-light: rgba(255, 255, 255, 0.9);
   --navbar-bg-dark: rgba(24, 12, 41, 0.9); /* darker than #2e1a47 */
@@ -143,6 +143,17 @@ body.dark-mode #themeToggle i:hover {
 .navbar-nav .nav-link,
 #themeToggle i {
   transition: color 0.3s ease;
+}
+
+/* Dark mode: Fully white hamburger icon including outer box */
+body.dark-mode .navbar-toggler {
+  border: 2px solid rgba(255, 255, 255, 0.9);     /* white border */
+  background-color: transparent;                 /* transparent background */
+  border-radius: 6px;                            /* slight rounding like default */
+}
+
+body.dark-mode .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 
