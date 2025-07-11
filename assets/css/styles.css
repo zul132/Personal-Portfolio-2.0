@@ -37,9 +37,17 @@ body.dark-mode .navbar {
 
 /* Logo (navbar-brand) */
 .navbar .navbar-brand {
-  font-weight: 700;
-  color: #000;
+  font-weight: 720;
+  color: rgba(24, 12, 41, 0.9); 
   transition: color var(--transition-speed);
+}
+
+.navbar .navbar-brand:hover {
+  color: #ce33e8
+}
+
+body.dark-mode .navbar .navbar-brand:hover {
+  color: #ce33e8
 }
 
 body.dark-mode .navbar .navbar-brand {
@@ -195,6 +203,9 @@ body.dark-mode .hero-section {
   padding: 8px;
   box-shadow: 0 12px 30px rgba(107, 63, 160, 0.35); /* more intense shadow */
   transition: background 0.4s ease;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease;
 }
 
 /* Image inside wrapper */
@@ -206,8 +217,9 @@ body.dark-mode .hero-section {
   border: 4px solid white;
 }
 
-body.dark-mode .hero-img-wrapper {
-  background: radial-gradient(circle at center, #45275c, #2e1a47);
+.hero-img-wrapper:hover {
+  transform: scale(1.08); /* Slight zoom-in */
+  box-shadow: 0 0 45px rgba(107, 63, 160, 0.35);
 }
 
 /* Responsiveness styles for Hero section */
@@ -226,6 +238,5 @@ body.dark-mode .hero-img-wrapper {
 
 body.dark-mode #home .hero-img-wrapper {
   background: radial-gradient(circle at center, #5a3290, #2e1a47);
-  box-shadow: 0 0 40px rgba(171, 71, 188, 0.45) !important;
+  box-shadow: 0 0px 28px rgba(231, 194, 245, 0.816) !important;
 }
-
