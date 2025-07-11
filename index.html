@@ -69,16 +69,18 @@
    
    <section id="home" class="hero-section d-flex align-items-center">
     <div class="container">
-      <div class="row align-items-center">
+      <div class="row hero-row">
         
         <!-- Left Side: Text -->
-        <div class="col-md-6 text-center text-md-start" data-aos="fade-right">
+        <div class="col-md-6 hero-text text-center text-md-start">
           <h1 class="hero-name">Fathima Zulaikha</h1>
-          <p class="hero-subtitle">Aspiring Software Engineer | AI/ML Enthusiast | Full Stack Developer</p>
+          <p class="hero-subtitle">
+            I’m a <span class="typed-text fw-semibold"></span>
+          </p>
         </div>
         
         <!-- Right Side: Profile Image -->
-        <div class="col-md-6 text-center mt-4 mt-md-0" data-aos="fade-left">
+        <div class="col-md-6 text-center mt-4 mt-md-0">
           <div class="hero-img-wrapper">
             <img src="assets/images/profile.png" alt="Profile" class="img-fluid rounded-circle hero-img">
           </div>
@@ -107,6 +109,20 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init();
+  </script>
+
+
+  <!-- Typed.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <!-- Custom Typed.js Initialization -->
+  <script>
+    var typed = new Typed(".typed-text", {
+      strings: ["", "Full-Stack Developer", "Gen AI Engineer", "Web Designer", "Machine Learning Enthusiast", "Computer Science Graduate"],
+      typeSpeed: 90,
+      backSpeed: 40,
+      loop: true
+    });
   </script>
 
   <!-- Custom JS -->
