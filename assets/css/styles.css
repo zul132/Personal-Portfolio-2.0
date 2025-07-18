@@ -185,7 +185,7 @@ body.dark-mode .hero-section {
 
 /* Headline */
 .hero-name {
-  font-size: 3.2rem; /* was 2.8rem */
+  font-size: 3.4rem; /* was 2.8rem */
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 0.70rem;
@@ -194,7 +194,7 @@ body.dark-mode .hero-section {
 
 /* Subtitle */
 .hero-subtitle {
-  font-size: 1.6rem; /* was 1.2rem */
+  font-size: 1.8rem; /* was 1.2rem */
   margin-top: 0.4rem;
   font-weight: 400;
   color: inherit;
@@ -220,6 +220,23 @@ body.dark-mode .typed-text {
 body.dark-mode .typed-cursor {
   color: #e3c7ff;        /* light purple in dark mode */
 }
+
+
+/* Objective Paragraph */
+.hero-objective {
+  font-size: 1.15rem;
+  margin-top: 0.65rem;
+  line-height: 1.7;
+  color: #555;
+  max-width: 90%;
+  transition: color 0.4s ease;
+}
+
+/* Dark Mode Objective Color */
+body.dark-mode .hero-objective {
+  color: #ccc;
+}
+
 
 /* Profile Image Wrapper */
 .hero-img-wrapper {
@@ -278,10 +295,19 @@ body.dark-mode .typed-cursor {
 
   .hero-name {
     font-size: 2.5rem;
+    margin-top: 3rem;
   }
 
   .hero-subtitle {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+  }
+
+  .hero-objective {
+    font-size: 1rem;        /* Slightly smaller text for mobile */
+    margin-top: 0.5rem; /* Reduce spacing */
+    max-width: 100%;        /* Full width for mobile */
+    text-align: center;     /* Center-align for better readability */
+    padding: 0 1rem;        /* Add some horizontal padding */
   }
 
   .hero-img-wrapper {
@@ -299,4 +325,57 @@ body.dark-mode .typed-cursor {
 body.dark-mode #home .hero-img-wrapper {
   background: radial-gradient(circle at center, #5a3290, #2e1a47);
   box-shadow: 0 0px 28px rgba(231, 194, 245, 0.816) !important;
+}
+
+
+/* Social Icons Container */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Social Icon Buttons */
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;   /* was 42px */
+  height: 50px;  /* was 42px */
+  border-radius: 50%;
+  background-color: #f3e8ff;
+  color: #6b3fa0;
+  font-size: 1.5rem; /* was 1.2rem */
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icon svg {
+  width: 24px; /* was 20px */
+  height: 24px; /* was 20px */
+}
+
+/* Hover Effect */
+.social-icon:hover {
+  background-color: #6b3fa0; /* purple */
+  color: #fff;
+}
+
+/* Dark Mode Styling */
+body.dark-mode .social-icon {
+  background-color: #45275c; /* dark lavender */
+  color: #e3c7ff;
+}
+
+body.dark-mode .social-icon:hover {
+  background-color: #ab47bc; /* bright purple hover */
+  color: #fff;
+}
+
+/* Responsive: Center icons on mobile */
+@media (max-width: 768px) {
+  .social-icons {
+    justify-content: center;
+    margin-top: 1rem;
+  }
 }
