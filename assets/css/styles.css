@@ -92,7 +92,7 @@ body.dark-mode #themeToggle i {
 }
 
 /* Theme toggle button */
-#themeToggle {
+.theme-toggle-btn {
   background: transparent;
   border: none;
   font-size: 1.25rem;
@@ -100,8 +100,20 @@ body.dark-mode #themeToggle i {
   transition: color var(--transition-speed);
 }
 
-#themeToggle:hover {
+.theme-toggle-btn:hover {
   cursor: pointer;
+}
+
+/* Keep the mobile theme toggle left of the hamburger */
+@media (max-width: 991.98px) {
+  .theme-toggle-btn.d-lg-none {
+    margin-left: auto;
+    margin-right: 0.75rem;
+  }
+
+  .navbar .navbar-toggler {
+    margin-left: 0;
+  }
 }
 
 /* 1. More spacing between navbar items */

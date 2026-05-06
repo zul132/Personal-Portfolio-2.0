@@ -1,23 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const themeToggle = document.getElementById("themeToggle");
-  const themeIcon = document.getElementById("themeIcon");
+  const themeToggleButtons = document.querySelectorAll(".theme-toggle-btn");
+  const themeIcons = document.querySelectorAll(".theme-icon");
 
-  // Load saved theme
-  if (localStorage.getItem("theme") === "dark") {
+  const setThemeIcon = (darkMode) => {
+    themeIcons.forEach((icon) => {
+      if (darkMode) {
+        icon.classList.replace("fa-moon", "fa-sun");
+      } else {
+        icon.classList.replace("fa-sun", "fa-moon");
+      }
+    });
+  };
+
+  const isDark = localStorage.getItem("theme") === "dark";
+  if (isDark) {
     document.body.classList.add("dark-mode");
-    themeIcon.classList.replace("fa-moon", "fa-sun");
+    setThemeIcon(true);
   }
 
-  themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-
-    // Switch icons
-    if (document.body.classList.contains("dark-mode")) {
-      themeIcon.classList.replace("fa-moon", "fa-sun");
-      localStorage.setItem("theme", "dark");
-    } else {
-      themeIcon.classList.replace("fa-sun", "fa-moon");
-      localStorage.setItem("theme", "light");
-    }
+  themeToggleButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const darkModeActive = document.body.classList.toggle("dark-mode");
+      setThemeIcon(darkModeActive);
+      localStorage.setItem("theme", darkModeActive ? "dark" : "light");
+    });
   });
 });
